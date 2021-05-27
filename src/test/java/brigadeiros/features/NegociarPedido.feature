@@ -3,7 +3,7 @@ Feature: Negociar Pedido
     Background:
         Given url "http://localhost:8080/engine-rest"
     
-    Scenario Outline: Negociar Pedido
+    Scenario Outline: Negociar Pedido com sucesso
         Given path "/process-definition/key/DaNegociacaoAEntregaDoPedidoProcess/start"
         Given request
         """
