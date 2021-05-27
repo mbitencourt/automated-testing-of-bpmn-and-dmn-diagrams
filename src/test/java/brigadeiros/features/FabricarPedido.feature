@@ -23,8 +23,8 @@ Feature: Fabricar Pedido
         Then status 200
         And match $ == '#object'
         And match $.id == '#present'
-        And match $.variables.pedidoValido.value == true
         And match $.variables.numeroPedido.value == '#present'
+        And match $.variables.pedidoValido.value == true
         * def idInstancia = $.id
         * def numeroPedido = $.variables.numeroPedido.value
         * print 'idInstancia: ' + idInstancia
