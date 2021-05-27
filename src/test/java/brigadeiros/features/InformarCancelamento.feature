@@ -9,9 +9,9 @@ Feature: Fabricar Pedido
         """
         {
             "variables": {
-                "quantidadePedida": {"value": 100, "type": "Integer"},
-                "prazoPedido": {"value": 1, "type": "Integer"},
-                "nomeCliente": {"value": "Creusa", "type": "String"},
+                "quantidadePedida": {"value": 1001, "type": "Integer"},
+                "prazoPedido": {"value": 0, "type": "Integer"},
+                "nomeCliente": {"value": "Maria", "type": "String"},
                 "indicacao": {"value": true, "type": "Boolean"},
                 "comprou": {"value": true, "type": "Boolean"},
                 "pagou": {"value": true, "type": "Boolean"}
@@ -24,7 +24,7 @@ Feature: Fabricar Pedido
         And match $ == '#object'
         And match $.id == '#present'
         And match $.variables.numeroPedido.value == '#present'
-        And match $.variables.pedidoValido.value == true
+        And match $.variables.pedidoValido.value == false
         * def idInstancia = $.id
         * def numeroPedido = $.variables.numeroPedido.value
         * print 'idInstancia: ' + idInstancia
@@ -35,6 +35,7 @@ Feature: Fabricar Pedido
         Then status 200
         And match $ == '#array'
         And match $[0].id == '#present'
+        And match $[0].taskDefinitionKey == 'InformarPedidoCanceladoTask'
         * def idTask = $[0].id   
 
         Given path "/task/" + idTask + "/complete"
@@ -42,7 +43,8 @@ Feature: Fabricar Pedido
         When method POST
         Then status 204
 
-        Given path "/task?processVariables=numeroPedido_eq_" + numeroPedido
+        Given path "/history/process-instance/" + idInstancia
         When method GET
         Then status 200
-        And match $[0].taskDefinitionKey == 'EntregarPedidoTask'
+        And match $ == '#object'
+        And match $.state == 'COMPLETED'
