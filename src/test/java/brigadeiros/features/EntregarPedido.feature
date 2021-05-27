@@ -3,7 +3,7 @@ Feature: Entregar Pedido
     Background:
         Given url "http://localhost:8080/engine-rest"
     
-    Scenario: Entregar Pedido com sucesso 
+    Scenario: Entregar Pedido com sucesso valido
         Given path "/process-definition/key/DaNegociacaoAEntregaDoPedidoProcess/start"
         Given request
         """
