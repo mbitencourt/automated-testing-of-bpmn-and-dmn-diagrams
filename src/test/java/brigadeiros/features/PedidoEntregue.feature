@@ -35,6 +35,19 @@ Feature: Da Negociação A Entrega do Pedido
         Then status 200
         And match $ == '#array'
         And match $[0].id == '#present'
+        And match $[0].taskDefinitionKey == 'InformarPedidoAceitoTask'
+        * def idTask = $[0].id   
+
+        Given path "/task/" + idTask + "/complete"
+        And header Content-Type = 'application/json'
+        When method POST
+        Then status 204
+
+        Given path "/task?processVariables=numeroPedido_eq_" + numeroPedido
+        When method GET
+        Then status 200
+        And match $ == '#array'
+        And match $[0].id == '#present'
         And match $[0].taskDefinitionKey == 'FabricarPedidoTask'
         * def idTask = $[0].id   
 
