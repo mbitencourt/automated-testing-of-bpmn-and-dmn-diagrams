@@ -1,17 +1,17 @@
-Feature: Da Negociação A Entrega do Pedido
+Feature: Fazer Pedido Inválido
 
     Background:
         Given url "http://localhost:8080/engine-rest"
     
-    Scenario: Negociar, Fabricar e Entregar Pedido com sucesso 
+    Scenario: Fazer Pedido Inválido com sucesso
         Given path "/process-definition/key/DaNegociacaoAEntregaDoPedidoProcess/start"
         Given request
         """
         {
             "variables": {
-                "quantidadePedida": {"value": 100, "type": "Integer"},
-                "prazoPedido": {"value": 1, "type": "Integer"},
-                "nomeCliente": {"value": "Creusa", "type": "String"},
+                "quantidadePedida": {"value": 1001, "type": "Integer"},
+                "prazoPedido": {"value": 0, "type": "Integer"},
+                "nomeCliente": {"value": "Maria", "type": "String"},
                 "indicacao": {"value": true, "type": "Boolean"},
                 "comprou": {"value": true, "type": "Boolean"},
                 "pagou": {"value": true, "type": "Boolean"}
@@ -24,7 +24,7 @@ Feature: Da Negociação A Entrega do Pedido
         And match $ == '#object'
         And match $.id == '#present'
         And match $.variables.numeroPedido.value == '#present'
-        And match $.variables.pedidoValido.value == true
+        And match $.variables.pedidoValido.value == false
         * def idInstancia = $.id
         * def numeroPedido = $.variables.numeroPedido.value
         * print 'idInstancia: ' + idInstancia
@@ -35,33 +35,7 @@ Feature: Da Negociação A Entrega do Pedido
         Then status 200
         And match $ == '#array'
         And match $[0].id == '#present'
-        And match $[0].taskDefinitionKey == 'InformarPedidoAceitoTask'
-        * def idTask = $[0].id   
-
-        Given path "/task/" + idTask + "/complete"
-        And header Content-Type = 'application/json'
-        When method POST
-        Then status 204
-
-        Given path "/task?processVariables=numeroPedido_eq_" + numeroPedido
-        When method GET
-        Then status 200
-        And match $ == '#array'
-        And match $[0].id == '#present'
-        And match $[0].taskDefinitionKey == 'FabricarPedidoTask'
-        * def idTask = $[0].id   
-
-        Given path "/task/" + idTask + "/complete"
-        And header Content-Type = 'application/json'
-        When method POST
-        Then status 204
-
-        Given path "/task?processVariables=numeroPedido_eq_" + numeroPedido
-        When method GET
-        Then status 200
-        And match $ == '#array'
-        And match $[0].id == '#present'
-        And match $[0].taskDefinitionKey == 'EntregarPedidoTask'
+        And match $[0].taskDefinitionKey == 'InformarPedidoCanceladoTask'
         * def idTask = $[0].id   
 
         Given path "/task/" + idTask + "/complete"
