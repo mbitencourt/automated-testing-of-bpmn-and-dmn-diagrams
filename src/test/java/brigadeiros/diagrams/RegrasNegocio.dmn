@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="RegrasNegocio" name="Regras de Negócio" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.7.0">
-  <decision id="PedidoValido" name="Pedido Válido">
+  <decision id="PedidoValidoDecision" name="Pedido Válido">
     <informationRequirement id="InformationRequirement_0onkbjv">
-      <requiredDecision href="#ValePena" />
+      <requiredDecision href="#ValePenaDecision" />
     </informationRequirement>
     <informationRequirement id="InformationRequirement_14ps7jh">
-      <requiredDecision href="#TipoCliente" />
+      <requiredDecision href="#TipoClienteDecision" />
     </informationRequirement>
     <decisionTable id="DecisionTable_1op7ey9" biodi:annotationsWidth="400">
       <input id="Input_1" label="Tipo Cliente" biodi:width="150" camunda:inputVariable="tipoCliente">
@@ -85,7 +85,7 @@
       </rule>
     </decisionTable>
   </decision>
-  <decision id="ValePena" name="Vale a pena">
+  <decision id="ValePenaDecision" name="Vale a pena">
     <decisionTable id="DecisionTable_06digz4">
       <input id="InputClause_0ggl6du" label="Quantidade pedida" camunda:inputVariable="quantidadePedida">
         <inputExpression id="LiteralExpression_1t23b7h" typeRef="integer">
@@ -144,9 +144,9 @@
       </rule>
     </decisionTable>
   </decision>
-  <decision id="TipoCliente" name="Tipo de Cliente">
+  <decision id="TipoClienteDecision" name="Tipo de Cliente">
     <informationRequirement id="InformationRequirement_1twl253">
-      <requiredDecision href="#PerfilPagador" />
+      <requiredDecision href="#PerfilPagadorDecision" />
     </informationRequirement>
     <decisionTable id="DecisionTable_0468dgg" hitPolicy="FIRST">
       <input id="InputClause_0hr45a4" label="Nome Cliente" camunda:inputVariable="nomeCliente">
@@ -237,7 +237,7 @@
       </rule>
     </decisionTable>
   </decision>
-  <decision id="PerfilPagador" name="Perfil do Pagador">
+  <decision id="PerfilPagadorDecision" name="Perfil do Pagador">
     <decisionTable id="DecisionTable_1qbi2cu">
       <input id="InputClause_1d755kp" label="Já comprou" camunda:inputVariable="comprou">
         <inputExpression id="LiteralExpression_1vrbpws" typeRef="boolean">
@@ -285,9 +285,9 @@
       </rule>
     </decisionTable>
   </decision>
-  <decision id="ValorPedido" name="Valor do Pedido">
+  <decision id="ValorPedidoDecision" name="Valor do Pedido">
     <informationRequirement id="InformationRequirement_1cur9ho">
-      <requiredDecision href="#TipoCliente" />
+      <requiredDecision href="#TipoClienteDecision" />
     </informationRequirement>
     <decisionTable id="DecisionTable_16nbftf" biodi:annotationsWidth="400">
       <input id="InputClause_0dh9vgy" label="Tipo do Cliente" biodi:width="150" camunda:inputVariable="tipoCliente">
@@ -295,7 +295,7 @@
           <text>tipoCliente</text>
         </inputExpression>
       </input>
-      <output id="OutputClause_0a9t94u" label="Valor do Pedido" name="valorPedido" typeRef="double" biodi:width="209.60000610351562" />
+      <output id="OutputClause_0a9t94u" label="Valor do Pedido" name="valorPedido" typeRef="double" biodi:width="209" />
       <rule id="DecisionRule_0ymwpc8">
         <inputEntry id="UnaryTests_095ojrs">
           <text>"VIP"</text>
@@ -316,16 +316,16 @@
   </decision>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram>
-      <dmndi:DMNShape dmnElementRef="PedidoValido">
+      <dmndi:DMNShape dmnElementRef="PedidoValidoDecision">
         <dc:Bounds height="80" width="180" x="290" y="80" />
       </dmndi:DMNShape>
-      <dmndi:DMNShape id="DMNShape_0jq5hgq" dmnElementRef="ValePena">
+      <dmndi:DMNShape id="DMNShape_0jq5hgq" dmnElementRef="ValePenaDecision">
         <dc:Bounds height="80" width="180" x="180" y="240" />
       </dmndi:DMNShape>
-      <dmndi:DMNShape id="DMNShape_0sg032j" dmnElementRef="TipoCliente">
+      <dmndi:DMNShape id="DMNShape_0sg032j" dmnElementRef="TipoClienteDecision">
         <dc:Bounds height="80" width="180" x="420" y="240" />
       </dmndi:DMNShape>
-      <dmndi:DMNShape id="DMNShape_1atolbe" dmnElementRef="PerfilPagador">
+      <dmndi:DMNShape id="DMNShape_1atolbe" dmnElementRef="PerfilPagadorDecision">
         <dc:Bounds height="80" width="180" x="420" y="390" />
       </dmndi:DMNShape>
       <dmndi:DMNEdge id="DMNEdge_07y4ce5" dmnElementRef="InformationRequirement_0onkbjv">
@@ -348,7 +348,7 @@
         <di:waypoint x="620" y="180" />
         <di:waypoint x="620" y="160" />
       </dmndi:DMNEdge>
-      <dmndi:DMNShape id="DMNShape_0pcxy04" dmnElementRef="ValorPedido">
+      <dmndi:DMNShape id="DMNShape_0pcxy04" dmnElementRef="ValorPedidoDecision">
         <dc:Bounds height="80" width="180" x="530" y="80" />
       </dmndi:DMNShape>
     </dmndi:DMNDiagram>

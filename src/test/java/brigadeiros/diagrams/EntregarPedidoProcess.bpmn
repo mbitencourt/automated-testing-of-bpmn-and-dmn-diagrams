@@ -9,20 +9,20 @@
       <bpmn:incoming>Flow_0trl6cf</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="Flow_0trl6cf" sourceRef="EntregarPedidoTask" targetRef="PedidoEntregueEndEvent" />
-    <bpmn:userTask id="EntregarPedidoTask" name="Entregar&#10;pedido">
+    <bpmn:userTask id="EntregarPedidoTask" name="Entregar&#10;pedido" camunda:assignee="demo">
       <bpmn:incoming>Flow_198gdsu</bpmn:incoming>
       <bpmn:outgoing>Flow_0trl6cf</bpmn:outgoing>
     </bpmn:userTask>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="EntregarPedidoProcess">
-      <bpmndi:BPMNEdge id="Flow_198gdsu_di" bpmnElement="Flow_198gdsu">
-        <di:waypoint x="215" y="97" />
-        <di:waypoint x="270" y="97" />
-      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0trl6cf_di" bpmnElement="Flow_0trl6cf">
         <di:waypoint x="370" y="97" />
         <di:waypoint x="432" y="97" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_198gdsu_di" bpmnElement="Flow_198gdsu">
+        <di:waypoint x="215" y="97" />
+        <di:waypoint x="270" y="97" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="PedidoFabricadoStartEvent" bioc:stroke="rgb(67, 160, 71)" bioc:fill="rgb(200, 230, 201)">
         <dc:Bounds x="179" y="79" width="36" height="36" />

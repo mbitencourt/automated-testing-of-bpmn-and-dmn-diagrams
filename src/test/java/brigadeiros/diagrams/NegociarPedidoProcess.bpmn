@@ -41,10 +41,10 @@ execution.removeVariable("resultadoPedidoValido");</camunda:script>
       <bpmn:incoming>Flow_0trmsrj</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="Flow_0trmsrj" sourceRef="CalcularValorDoPedidoTask" targetRef="PedidoAceitoEndEvent" />
-    <bpmn:sequenceFlow id="PedidoInvalidoSequenceFlow" name="Pedido&#10;Inválido" sourceRef="Gateway_082wdbz" targetRef="PedidoCanceladoEndEvent">
+    <bpmn:sequenceFlow id="PedidoInvalidoSequenceFlow" name="Pedido&#10;Inválido" sourceRef="Gateway_082wdbz" targetRef="PedidoInvalidoEndEvent">
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${pedidoValido==false}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
-    <bpmn:endEvent id="PedidoCanceladoEndEvent" name="Pedido&#10;inválido">
+    <bpmn:endEvent id="PedidoInvalidoEndEvent" name="Pedido&#10;inválido">
       <bpmn:incoming>PedidoInvalidoSequenceFlow</bpmn:incoming>
       <bpmn:errorEventDefinition id="ErrorEventDefinition_0emvmgg" errorRef="Error_0t9zfjk" />
     </bpmn:endEvent>
@@ -53,31 +53,31 @@ execution.removeVariable("resultadoPedidoValido");</camunda:script>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="NegociarPedidoProcess">
       <bpmndi:BPMNEdge id="Flow_03kbqrc_di" bpmnElement="PedidoInvalidoSequenceFlow">
-        <di:waypoint x="453" y="142" />
-        <di:waypoint x="453" y="230" />
-        <di:waypoint x="569" y="230" />
+        <di:waypoint x="483" y="142" />
+        <di:waypoint x="483" y="230" />
+        <di:waypoint x="614" y="230" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="460" y="196" width="39" height="27" />
+          <dc:Bounds x="493" y="196" width="39" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0trmsrj_di" bpmnElement="Flow_0trmsrj">
-        <di:waypoint x="637" y="117" />
-        <di:waypoint x="692" y="117" />
+        <di:waypoint x="682" y="117" />
+        <di:waypoint x="752" y="117" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_01ayl8o_di" bpmnElement="PedidoValidoSequenceFlow">
-        <di:waypoint x="478" y="117" />
-        <di:waypoint x="537" y="117" />
+        <di:waypoint x="508" y="117" />
+        <di:waypoint x="582" y="117" />
         <bpmndi:BPMNLabel>
           <dc:Bounds x="473" y="86" width="35" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0cl3gwq_di" bpmnElement="Flow_0cl3gwq">
-        <di:waypoint x="369" y="117" />
-        <di:waypoint x="428" y="117" />
+        <di:waypoint x="384" y="117" />
+        <di:waypoint x="458" y="117" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0i5ev17_di" bpmnElement="Flow_0i5ev17">
         <di:waypoint x="215" y="117" />
-        <di:waypoint x="269" y="117" />
+        <di:waypoint x="284" y="117" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="PedidoRecebidoStartEvent" bioc:stroke="rgb(67, 160, 71)" bioc:fill="rgb(200, 230, 201)">
         <dc:Bounds x="179" y="99" width="36" height="36" />
@@ -86,25 +86,25 @@ execution.removeVariable("resultadoPedidoValido");</camunda:script>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_016b4mz_di" bpmnElement="PedidoAceitoEndEvent" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
-        <dc:Bounds x="692" y="99" width="36" height="36" />
+        <dc:Bounds x="752" y="99" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="693" y="142" width="35" height="27" />
+          <dc:Bounds x="753" y="142" width="35" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0iht8a4_di" bpmnElement="ValidarPedidoTask">
-        <dc:Bounds x="269" y="77" width="100" height="80" />
+        <dc:Bounds x="284" y="77" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Gateway_082wdbz_di" bpmnElement="Gateway_082wdbz" isMarkerVisible="true">
-        <dc:Bounds x="428" y="92" width="50" height="50" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_1pncq6v_di" bpmnElement="PedidoCanceladoEndEvent" bioc:stroke="rgb(229, 57, 53)" bioc:fill="rgb(255, 205, 210)">
-        <dc:Bounds x="569" y="212" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="569" y="255" width="38" height="27" />
-        </bpmndi:BPMNLabel>
+        <dc:Bounds x="458" y="92" width="50" height="50" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0yqnqdd_di" bpmnElement="CalcularValorDoPedidoTask">
-        <dc:Bounds x="537" y="77" width="100" height="80" />
+        <dc:Bounds x="582" y="77" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1pncq6v_di" bpmnElement="PedidoInvalidoEndEvent" bioc:stroke="rgb(229, 57, 53)" bioc:fill="rgb(255, 205, 210)">
+        <dc:Bounds x="614" y="212" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="614" y="255" width="38" height="27" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>

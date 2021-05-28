@@ -4,25 +4,34 @@
     <bpmn:startEvent id="PedidoAceitoStartEvent" name="Pedido&#10;aceito">
       <bpmn:outgoing>Flow_18pbsfr</bpmn:outgoing>
     </bpmn:startEvent>
-    <bpmn:sequenceFlow id="Flow_18pbsfr" sourceRef="PedidoAceitoStartEvent" targetRef="FabricarPedidoTask" />
+    <bpmn:sequenceFlow id="Flow_18pbsfr" sourceRef="PedidoAceitoStartEvent" targetRef="InformarPedidoAceitoTask" />
     <bpmn:endEvent id="PedidoFabricadoEndEvent" name="Pedido&#10;fabricado">
       <bpmn:incoming>Flow_0evhuc0</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="Flow_0evhuc0" sourceRef="FabricarPedidoTask" targetRef="PedidoFabricadoEndEvent" />
     <bpmn:userTask id="FabricarPedidoTask" name="Fabricar&#10;pedido" camunda:assignee="demo">
-      <bpmn:incoming>Flow_18pbsfr</bpmn:incoming>
+      <bpmn:incoming>Flow_002tvev</bpmn:incoming>
       <bpmn:outgoing>Flow_0evhuc0</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_002tvev" sourceRef="InformarPedidoAceitoTask" targetRef="FabricarPedidoTask" />
+    <bpmn:userTask id="InformarPedidoAceitoTask" name="Informar&#10;pedido aceito" camunda:assignee="demo">
+      <bpmn:incoming>Flow_18pbsfr</bpmn:incoming>
+      <bpmn:outgoing>Flow_002tvev</bpmn:outgoing>
     </bpmn:userTask>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="FabricarPedidoProcess">
+      <bpmndi:BPMNEdge id="Flow_0evhuc0_di" bpmnElement="Flow_0evhuc0">
+        <di:waypoint x="548" y="117" />
+        <di:waypoint x="612" y="117" />
+      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_18pbsfr_di" bpmnElement="Flow_18pbsfr">
         <di:waypoint x="215" y="117" />
-        <di:waypoint x="270" y="117" />
+        <di:waypoint x="279" y="117" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_0evhuc0_di" bpmnElement="Flow_0evhuc0">
-        <di:waypoint x="370" y="117" />
-        <di:waypoint x="432" y="117" />
+      <bpmndi:BPMNEdge id="Flow_002tvev_di" bpmnElement="Flow_002tvev">
+        <di:waypoint x="379" y="117" />
+        <di:waypoint x="448" y="117" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="PedidoAceitoStartEvent" bioc:stroke="rgb(67, 160, 71)" bioc:fill="rgb(200, 230, 201)">
         <dc:Bounds x="179" y="99" width="36" height="36" />
@@ -31,13 +40,16 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_0f9lzkn_di" bpmnElement="PedidoFabricadoEndEvent" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
-        <dc:Bounds x="432" y="99" width="36" height="36" />
+        <dc:Bounds x="612" y="99" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="429" y="142" width="45" height="27" />
+          <dc:Bounds x="609" y="142" width="45" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_04a3zg5_di" bpmnElement="InformarPedidoAceitoTask">
+        <dc:Bounds x="279" y="77" width="100" height="80" />
+      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0ga1iq6_di" bpmnElement="FabricarPedidoTask">
-        <dc:Bounds x="270" y="77" width="100" height="80" />
+        <dc:Bounds x="448" y="77" width="100" height="80" />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>

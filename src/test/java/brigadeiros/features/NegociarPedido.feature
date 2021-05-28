@@ -33,9 +33,9 @@ Feature: Negociar Pedido
             |              100 |           0 | Creusa      | true      | true    | true  | true         | "Pedido aceito"          |        130.00 |
             |              999 |           0 | Creusa      | true      | true    | true  | true         | "Pedido aceito"          |       1298.70 |
             |             1001 |           0 | Creusa      | true      | true    | true  | true         | "Pedido aceito"          |       1301.30 |
-            |               99 |           1 | Creusa      | false     | false   | false | true         | "Pedido aceito"          |        128.70 |        
-            |              100 |           1 | Creusa      | true      | true    | true  | true         | "Pedido aceito"          |        130.00 |       
-            |              999 |           1 | Creusa      | true      | true    | true  | true         | "Pedido aceito"          |       1298.70 |   
+            |               99 |           1 | Creusa      | false     | false   | false | true         | "Pedido aceito"          |        128.70 |
+            |              100 |           1 | Creusa      | true      | true    | true  | true         | "Pedido aceito"          |        130.00 |
+            |              999 |           1 | Creusa      | true      | true    | true  | true         | "Pedido aceito"          |       1298.70 |
             |             1001 |           1 | Creusa      | true      | true    | true  | true         | "Pedido aceito"          |       1301.30 |
             |              100 |           1 | Maria       | false     | true    | true  | true         | "Pedido aceito"          |        160.00 |
             |              100 |           1 | Maria       | true      | false   | false | true         | "Pedido aceito"          |        160.00 |
