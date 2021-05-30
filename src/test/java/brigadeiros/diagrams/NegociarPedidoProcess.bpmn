@@ -15,7 +15,7 @@
       <bpmn:outgoing>Flow_0i5ev17</bpmn:outgoing>
     </bpmn:startEvent>
     <bpmn:sequenceFlow id="Flow_0i5ev17" sourceRef="PedidoRecebidoStartEvent" targetRef="ValidarPedidoTask" />
-    <bpmn:businessRuleTask id="ValidarPedidoTask" name="Validar&#10;Pedido" camunda:resultVariable="resultadoPedidoValido" camunda:decisionRef="PedidoValido" camunda:mapDecisionResult="singleResult">
+    <bpmn:businessRuleTask id="ValidarPedidoTask" name="Validar&#10;Pedido" camunda:resultVariable="resultadoPedidoValido" camunda:decisionRef="PedidoValidoDecision" camunda:mapDecisionResult="singleResult">
       <bpmn:extensionElements>
         <camunda:executionListener event="end">
           <camunda:script scriptFormat="JavaScript">execution.setVariable("pedidoValido", resultadoPedidoValido.pedidoValido);
@@ -33,7 +33,7 @@ execution.removeVariable("resultadoPedidoValido");</camunda:script>
     </bpmn:exclusiveGateway>
     <bpmn:sequenceFlow id="Flow_0cl3gwq" sourceRef="ValidarPedidoTask" targetRef="Gateway_082wdbz" />
     <bpmn:sequenceFlow id="PedidoValidoSequenceFlow" sourceRef="Gateway_082wdbz" targetRef="CalcularValorDoPedidoTask" />
-    <bpmn:businessRuleTask id="CalcularValorDoPedidoTask" name="Calcular&#10;Valor do Pedido" camunda:resultVariable="valorPedido" camunda:decisionRef="ValorPedido" camunda:mapDecisionResult="singleEntry">
+    <bpmn:businessRuleTask id="CalcularValorDoPedidoTask" name="Calcular&#10;Valor do Pedido" camunda:resultVariable="valorPedido" camunda:decisionRef="ValorPedidoDecision" camunda:mapDecisionResult="singleEntry">
       <bpmn:incoming>PedidoValidoSequenceFlow</bpmn:incoming>
       <bpmn:outgoing>Flow_0trmsrj</bpmn:outgoing>
     </bpmn:businessRuleTask>
@@ -85,12 +85,6 @@ execution.removeVariable("resultadoPedidoValido");</camunda:script>
           <dc:Bounds x="176" y="142" width="43" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_016b4mz_di" bpmnElement="PedidoAceitoEndEvent" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
-        <dc:Bounds x="752" y="99" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="753" y="142" width="35" height="27" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0iht8a4_di" bpmnElement="ValidarPedidoTask">
         <dc:Bounds x="284" y="77" width="100" height="80" />
       </bpmndi:BPMNShape>
@@ -99,6 +93,12 @@ execution.removeVariable("resultadoPedidoValido");</camunda:script>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0yqnqdd_di" bpmnElement="CalcularValorDoPedidoTask">
         <dc:Bounds x="582" y="77" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_016b4mz_di" bpmnElement="PedidoAceitoEndEvent" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
+        <dc:Bounds x="752" y="99" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="753" y="142" width="35" height="27" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_1pncq6v_di" bpmnElement="PedidoInvalidoEndEvent" bioc:stroke="rgb(229, 57, 53)" bioc:fill="rgb(255, 205, 210)">
         <dc:Bounds x="614" y="212" width="36" height="36" />
