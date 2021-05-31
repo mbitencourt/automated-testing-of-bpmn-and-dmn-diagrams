@@ -20,8 +20,8 @@ class BrigadeirosNiceTest {
 
 	@Test
 	void testParallel() {
-		System.setProperty("karate.env", "demo");
-		Results results = Runner.path("classpath:brigadeiros").tags("~@ignore")
+		Results results = Runner.path("classpath:brigadeiros")
+				.tags("~@ignore")
 				.outputCucumberJson(true)
 				.parallel(5);
 		generateReport(results.getReportDir());

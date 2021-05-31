@@ -77,88 +77,88 @@ execution.setBusinessKey("pedido-"+numeroPedido);</bpmn:script>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="DaNegociacaoAEntregaDoPedidoProcess">
       <bpmndi:BPMNEdge id="Flow_06wx6i8_di" bpmnElement="Flow_06wx6i8">
-        <di:waypoint x="392" y="177" />
-        <di:waypoint x="450" y="177" />
+        <di:waypoint x="342" y="177" />
+        <di:waypoint x="400" y="177" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1lumfae_di" bpmnElement="Flow_1lumfae">
-        <di:waypoint x="980" y="360" />
-        <di:waypoint x="1062" y="360" />
+        <di:waypoint x="825" y="360" />
+        <di:waypoint x="892" y="360" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_14ss5vv_di" bpmnElement="Flow_14ss5vv">
-        <di:waypoint x="790" y="295" />
-        <di:waypoint x="790" y="360" />
-        <di:waypoint x="880" y="360" />
+        <di:waypoint x="620" y="295" />
+        <di:waypoint x="620" y="360" />
+        <di:waypoint x="725" y="360" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1eq6pys_di" bpmnElement="Flow_1eq6pys">
-        <di:waypoint x="215" y="177" />
-        <di:waypoint x="292" y="177" />
+        <di:waypoint x="198" y="177" />
+        <di:waypoint x="242" y="177" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_02hazfl_di" bpmnElement="Flow_02hazfl">
-        <di:waypoint x="1200" y="177" />
-        <di:waypoint x="1252" y="177" />
+        <di:waypoint x="1150" y="177" />
+        <di:waypoint x="1202" y="177" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="PedidoRecebidoStartEvent" bioc:stroke="rgb(67, 160, 71)" bioc:fill="rgb(200, 230, 201)">
-        <dc:Bounds x="179" y="159" width="36" height="36" />
+        <dc:Bounds x="162" y="159" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="176" y="202" width="43" height="27" />
+          <dc:Bounds x="159" y="202" width="43" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1wr26ib_di" bpmnElement="PedidoEntregueEndEvent" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
+        <dc:Bounds x="1202" y="159" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1199" y="202" width="44" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1kq1jps_di" bpmnElement="AtribuirNumeroDoPedidoTask">
+        <dc:Bounds x="242" y="137" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1gbrbhx_di" bpmnElement="InformarPedidoCanceladoTask">
+        <dc:Bounds x="725" y="320" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1utgdwz_di" bpmnElement="PedidoCanceladoEndEvent" bioc:stroke="rgb(229, 57, 53)" bioc:fill="rgb(255, 205, 210)">
+        <dc:Bounds x="892" y="342" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="885" y="385" width="51" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_1ejno4y_di" bpmnElement="DaNegociacaoAEntregaDoPedidoSubProcess" isExpanded="true">
-        <dc:Bounds x="450" y="77" width="750" height="200" />
+        <dc:Bounds x="400" y="77" width="750" height="200" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_1fad8ax_di" bpmnElement="Flow_1fad8ax">
-        <di:waypoint x="1056" y="177" />
-        <di:waypoint x="1138" y="177" />
+        <di:waypoint x="1006" y="177" />
+        <di:waypoint x="1088" y="177" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0inyn8f_di" bpmnElement="Flow_0inyn8f">
-        <di:waypoint x="874" y="177" />
-        <di:waypoint x="956" y="177" />
+        <di:waypoint x="824" y="177" />
+        <di:waypoint x="906" y="177" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1eg9m7u_di" bpmnElement="Flow_1eg9m7u">
-        <di:waypoint x="692" y="177" />
-        <di:waypoint x="774" y="177" />
+        <di:waypoint x="642" y="177" />
+        <di:waypoint x="724" y="177" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_06pz9cx_di" bpmnElement="Flow_06pz9cx">
-        <di:waypoint x="510" y="177" />
-        <di:waypoint x="592" y="177" />
+        <di:waypoint x="460" y="177" />
+        <di:waypoint x="542" y="177" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="Event_1fea1pl_di" bpmnElement="Event_1fea1pl">
-        <dc:Bounds x="474" y="159" width="36" height="36" />
+        <dc:Bounds x="424" y="159" width="36" height="36" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_03mt34g_di" bpmnElement="Event_03mt34g">
-        <dc:Bounds x="1138" y="159" width="36" height="36" />
+        <dc:Bounds x="1088" y="159" width="36" height="36" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0sn3kif_di" bpmnElement="NegociarPedidoCallActivity">
-        <dc:Bounds x="592" y="137" width="100" height="80" />
+        <dc:Bounds x="542" y="137" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0dmuiz6_di" bpmnElement="FabricarPedidoCallActivity">
-        <dc:Bounds x="774" y="137" width="100" height="80" />
+        <dc:Bounds x="724" y="137" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_00rgbbu_di" bpmnElement="EntregarPedidoCallActivity">
-        <dc:Bounds x="956" y="137" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_1wr26ib_di" bpmnElement="PedidoEntregueEndEvent" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
-        <dc:Bounds x="1252" y="159" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="1249" y="202" width="44" height="27" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_1utgdwz_di" bpmnElement="PedidoCanceladoEndEvent" bioc:stroke="rgb(229, 57, 53)" bioc:fill="rgb(255, 205, 210)">
-        <dc:Bounds x="1062" y="342" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="1055" y="385" width="51" height="27" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_1gbrbhx_di" bpmnElement="InformarPedidoCanceladoTask">
-        <dc:Bounds x="880" y="320" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_1kq1jps_di" bpmnElement="AtribuirNumeroDoPedidoTask">
-        <dc:Bounds x="292" y="137" width="100" height="80" />
+        <dc:Bounds x="906" y="137" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_0p0njj2_di" bpmnElement="PedidoInvalidoBoundaryEvent" bioc:stroke="rgb(229, 57, 53)" bioc:fill="rgb(255, 205, 210)">
-        <dc:Bounds x="772" y="259" width="36" height="36" />
+        <dc:Bounds x="602" y="259" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="806" y="316" width="38" height="27" />
+          <dc:Bounds x="636" y="316" width="38" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
