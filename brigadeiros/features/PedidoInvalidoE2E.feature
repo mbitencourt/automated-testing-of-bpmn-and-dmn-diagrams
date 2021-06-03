@@ -25,15 +25,14 @@ Feature: Registrar Pedido Inválido E2E
         And match $.variables.pedidoValido.value == false
         And match $.variables.msgValidacaoPedido.value == "Pedido não vale a pena"
         And match $.id == '#present'
-        * def idInstancia = $.id
+        * def idInstance = $.id
         * def numeroPedido = $.variables.numeroPedido.value
-        * print 'idInstancia: ' + idInstancia
+        * print 'idInstance: ' + idInstance
         * print 'numeroPedido: ' + numeroPedido
 
         Given path "/task?processVariables=numeroPedido_eq_" + numeroPedido
         When method GET
         Then status 200
-        And match $ == '#array'
         And match $[0].id == '#present'
         And match $[0].taskDefinitionKey == 'InformarPedidoCanceladoTask'
         * def idTask = $[0].id   
@@ -43,8 +42,7 @@ Feature: Registrar Pedido Inválido E2E
         When method POST
         Then status 204
 
-        Given path "/history/process-instance/" + idInstancia
+        Given path "/history/process-instance/" + idInstance
         When method GET
         Then status 200
-        And match $ == '#object'
         And match $.state == 'COMPLETED'
