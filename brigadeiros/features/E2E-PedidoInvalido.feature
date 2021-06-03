@@ -1,9 +1,9 @@
-Feature: Registrar Pedido Inválido
+Feature: Registrar Pedido Inválido E2E
 
     Background:
         Given url "http://localhost:8080/engine-rest"
     
-    Scenario: Registrar Pedido Inválido que não vale a pena
+    Scenario: Registrar Pedido Inválido ponta a ponta
         Given path "/process-definition/key/DaNegociacaoAEntregaDoPedidoProcess/start"
         Given request
         """
@@ -24,25 +24,27 @@ Feature: Registrar Pedido Inválido
         And match $.variables.numeroPedido.value == '#present'
         And match $.variables.pedidoValido.value == false
         And match $.variables.msgValidacaoPedido.value == "Pedido não vale a pena"
+        And match $.id == '#present'
+        * def idInstancia = $.id
+        * def numeroPedido = $.variables.numeroPedido.value
+        * print 'idInstancia: ' + idInstancia
+        * print 'numeroPedido: ' + numeroPedido
 
-    Scenario: Registrar Pedido Inválido de cliente ruim
-        Given path "/process-definition/key/DaNegociacaoAEntregaDoPedidoProcess/start"
-        Given request
-        """
-        {
-            "variables": {
-                "quantidadePedida": {"value": 100, "type": "Integer"},
-                "prazoPedido": {"value": 1, "type": "Integer"},
-                "nomeCliente": {"value": "Maria", "type": "String"},
-                "indicacao": {"value": false, "type": "Boolean"},
-                "comprou": {"value": true, "type": "Boolean"},
-                "pagou": {"value": false, "type": "Boolean"}
-            },
-	        "withVariablesInReturn": true
-        }
-        """
-        When method POST
+        Given path "/task?processVariables=numeroPedido_eq_" + numeroPedido
+        When method GET
         Then status 200
-        And match $.variables.numeroPedido.value == '#present'
-        And match $.variables.pedidoValido.value == false
-        And match $.variables.msgValidacaoPedido.value == "Pedido de cliente ruim"
+        And match $ == '#array'
+        And match $[0].id == '#present'
+        And match $[0].taskDefinitionKey == 'InformarPedidoCanceladoTask'
+        * def idTask = $[0].id   
+
+        Given path "/task/" + idTask + "/complete"
+        And header Content-Type = 'application/json'
+        When method POST
+        Then status 204
+
+        Given path "/history/process-instance/" + idInstancia
+        When method GET
+        Then status 200
+        And match $ == '#object'
+        And match $.state == 'COMPLETED'

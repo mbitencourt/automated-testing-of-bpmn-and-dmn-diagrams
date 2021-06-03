@@ -20,7 +20,6 @@ Feature: Avaliar Pedido Válido
         """
         When method POST
         Then status 200
-        And match $ == '#array'
         And match response[0].valorPedido.value == <valorPedido>
 
         Examples: Pedidos válidos
