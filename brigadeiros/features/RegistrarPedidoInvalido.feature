@@ -1,9 +1,9 @@
-Feature: Fazer Pedido Inválido
+Feature: Registrar Pedido Inválido
 
     Background:
         Given url "http://localhost:8080/engine-rest"
     
-    Scenario: Fazer Pedido Inválido com sucesso
+    Scenario: Registrar Pedido Inválido com sucesso
         Given path "/process-definition/key/DaNegociacaoAEntregaDoPedidoProcess/start"
         Given request
         """

@@ -1,9 +1,9 @@
-Feature: Fazer Pedido Válido
+Feature: Registrar Pedido Válido
 
     Background:
         Given url "http://localhost:8080/engine-rest"
     
-    Scenario: Fazer Pedido Válido com sucesso 
+    Scenario: Registrar Pedido Válido com sucesso 
         Given path "/process-definition/key/DaNegociacaoAEntregaDoPedidoProcess/start"
         Given request
         """
