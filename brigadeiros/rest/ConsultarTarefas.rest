@@ -1,0 +1,2 @@
+GET  http://localhost:8080/engine-rest/task?processVariables=numeroPedido_eq_123456789
+Content-Type: application/json
