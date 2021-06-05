@@ -1,10 +1,9 @@
 Feature: Registrar Pedido
 
     Background:
-        Given url "http://localhost:8080/engine-rest"
+        Given url "http://localhost:8080/engine-rest/process-definition/key/DaNegociacaoAEntregaDoPedidoProcess/start"
     
     Scenario: Registrar Pedido aceito
-        Given path "/process-definition/key/DaNegociacaoAEntregaDoPedidoProcess/start"
         Given request
         """
         {
@@ -27,7 +26,6 @@ Feature: Registrar Pedido
         And match $.variables.numeroPedido.value == '#present'
 
     Scenario: Registrar Pedido que não vale a pena
-        Given path "/process-definition/key/DaNegociacaoAEntregaDoPedidoProcess/start"
         Given request
         """
         {
@@ -50,7 +48,6 @@ Feature: Registrar Pedido
         And match $.variables.numeroPedido.value == '#present'
 
     Scenario: Registrar Pedido de cliente ruim
-        Given path "/process-definition/key/DaNegociacaoAEntregaDoPedidoProcess/start"
         Given request
         """
         {
