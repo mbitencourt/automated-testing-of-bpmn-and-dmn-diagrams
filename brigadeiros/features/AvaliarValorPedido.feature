@@ -1,9 +1,10 @@
 Feature: Avaliar Valor do Pedido
 
     Background:
-        Given url "http://localhost:8080/engine-rest/decision-definition/key/ValorPedidoDecision/evaluate"
+        Given url "http://localhost:8080/engine-rest"
     
     Scenario Outline: Avaliar Valor do Pedido com sucesso
+        Given path "/decision-definition/key/ValorPedidoDecision/evaluate"
         Given request
         """
         {

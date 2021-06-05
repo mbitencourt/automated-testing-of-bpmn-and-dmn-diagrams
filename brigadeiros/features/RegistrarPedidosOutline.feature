@@ -1,9 +1,10 @@
 Feature: Registrar Pedidos
 
     Background:
-        Given url "http://localhost:8080/engine-rest/process-definition/key/DaNegociacaoAEntregaDoPedidoProcess/start"
+        Given url "http://localhost:8080/engine-rest"
     
     Scenario Outline: Registrar Pedidos com sucesso
+        Given path "/process-definition/key/DaNegociacaoAEntregaDoPedidoProcess/start"
         Given request
         """
         {
