@@ -20,6 +20,7 @@ Feature: Registrar Pedido
         """
         When method POST
         Then status 200
+        And match $.variables.valorPedido.value == 130.00
         And match $.variables.pedidoValido.value == true
         And match $.variables.msgValidacaoPedido.value == "Pedido aceito"
         And match $.variables.numeroPedido.value == '#present'
@@ -41,6 +42,7 @@ Feature: Registrar Pedido
         """
         When method POST
         Then status 200
+        And match $.variables.valorPedido.value == '#notpresent'
         And match $.variables.pedidoValido.value == false
         And match $.variables.msgValidacaoPedido.value == "Pedido não vale a pena"
         And match $.variables.numeroPedido.value == '#present'
@@ -62,6 +64,7 @@ Feature: Registrar Pedido
         """
         When method POST
         Then status 200
+        And match $.variables.valorPedido.value == '#notpresent'
         And match $.variables.pedidoValido.value == false
         And match $.variables.msgValidacaoPedido.value == "Pedido de cliente ruim"
         And match $.variables.numeroPedido.value == '#present'
