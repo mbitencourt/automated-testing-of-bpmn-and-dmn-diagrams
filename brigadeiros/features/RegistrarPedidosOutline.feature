@@ -1,10 +1,9 @@
-Feature: Negociar Pedido
+Feature: Registrar Pedidos
 
     Background:
-        Given url "http://localhost:8080/engine-rest"
+        Given url "http://localhost:8080/engine-rest/process-definition/key/DaNegociacaoAEntregaDoPedidoProcess/start"
     
-    Scenario Outline: Negociar Pedido com sucesso
-        Given path "/process-definition/key/DaNegociacaoAEntregaDoPedidoProcess/start"
+    Scenario Outline: Registrar Pedidos com sucesso
         Given request
         """
         {
