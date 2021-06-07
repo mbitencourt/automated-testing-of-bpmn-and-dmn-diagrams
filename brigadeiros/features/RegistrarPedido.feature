@@ -3,7 +3,7 @@ Feature: Registrar Pedido
     Background:
         Given url "http://localhost:8080/engine-rest/process-definition/key/DaNegociacaoAEntregaDoPedidoProcess/start"
     
-    Scenario: Registrar Pedido aceito
+    Scenario: Registrar Pedido de cliente vip
         Given request
         """
         {
@@ -22,7 +22,29 @@ Feature: Registrar Pedido
         Then status 200
         And match $.variables.valorPedido.value == 130.00
         And match $.variables.pedidoValido.value == true
-        And match $.variables.msgValidacaoPedido.value == "Pedido aceito"
+        And match $.variables.msgValidacaoPedido.value == "Pedido de cliente vip"
+        And match $.variables.numeroPedido.value == '#present'
+
+    Scenario: Registrar Pedido de cliente comum
+        Given request
+        """
+        {
+            "variables": {
+                "quantidadePedida": {"value": 100, "type": "Integer"},
+                "prazoPedido": {"value": 1, "type": "Integer"},
+                "nomeCliente": {"value": "Maria", "type": "String"},
+                "indicacao": {"value": true, "type": "Boolean"},
+                "comprou": {"value": true, "type": "Boolean"},
+                "pagou": {"value": true, "type": "Boolean"}
+            },
+	        "withVariablesInReturn": true
+        }
+        """
+        When method POST
+        Then status 200
+        And match $.variables.valorPedido.value == 160.00
+        And match $.variables.pedidoValido.value == true
+        And match $.variables.msgValidacaoPedido.value == "Pedido de cliente comum"
         And match $.variables.numeroPedido.value == '#present'
 
     Scenario: Registrar Pedido que não vale a pena

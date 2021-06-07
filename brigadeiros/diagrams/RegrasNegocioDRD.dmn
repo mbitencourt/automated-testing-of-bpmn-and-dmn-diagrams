@@ -35,7 +35,7 @@
           <text>true</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0k5f9lw">
-          <text>"Pedido aceito"</text>
+          <text>"Pedido de cliente vip"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1c0syur">
@@ -50,7 +50,7 @@
           <text>true</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0q5w2dm">
-          <text>"Pedido aceito"</text>
+          <text>"Pedido de cliente comum"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0ia9dh3">
