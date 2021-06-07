@@ -23,7 +23,7 @@ Feature: Registrar Pedido Válido E2E
         Then status 200
         And match $.variables.numeroPedido.value == '#present'
         And match $.variables.pedidoValido.value == true
-        And match $.variables.msgValidacaoPedido.value == "Pedido aceito"
+        And match $.variables.msgValidacaoPedido.value == "Pedido de cliente vip"
         And match $.id == '#present'
         * def idInstance = $.id
         * def numeroPedido = $.variables.numeroPedido.value
