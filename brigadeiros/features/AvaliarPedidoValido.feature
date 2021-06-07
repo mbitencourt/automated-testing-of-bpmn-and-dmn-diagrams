@@ -40,10 +40,10 @@ Feature: Avaliar Pedido
            
         Examples: Pedidos inválidos
             | quantidadePedida | prazoPedido | nomeCliente | indicacao | comprou | pagou | pedidoValido | msgValidacaoPedido       |
-            |              100 |           0 | Maria       | true      | true    | true  | false        | "Pedido não vale a pena" |
-            |              999 |           0 | Maria       | true      | true    | true  | false        | "Pedido não vale a pena" |
-            |               99 |           1 | Maria       | true      | true    | true  | false        | "Pedido não vale a pena" |
-            |             1001 |           1 | Maria       | true      | true    | true  | false        | "Pedido não vale a pena" |
-            |              100 |           1 | Maria       | true      | true    | false | false        | "Pedido de cliente ruim" |
-            |              100 |           1 | Maria       | false     | true    | false | false        | "Pedido de cliente ruim" |
-            |              100 |           1 | Maria       | false     | false   | false | false        | "Pedido de cliente ruim" |
+            |              100 |           0 | Penna       | true      | true    | true  | false        | "Pedido não vale a pena" |
+            |              999 |           0 | Penna       | true      | true    | true  | false        | "Pedido não vale a pena" |
+            |               99 |           1 | Penna       | true      | true    | true  | false        | "Pedido não vale a pena" |
+            |             1001 |           1 | Penna       | true      | true    | true  | false        | "Pedido não vale a pena" |
+            |              100 |           1 | Frias       | true      | true    | false | false        | "Pedido de cliente ruim" |
+            |              100 |           1 | Frias       | false     | true    | false | false        | "Pedido de cliente ruim" |
+            |              100 |           1 | Frias       | false     | false   | false | false        | "Pedido de cliente ruim" |

@@ -11,7 +11,7 @@ Feature: Registrar Pedido Inválido E2E
             "variables": {
                 "quantidadePedida": {"value": 1001, "type": "Integer"},
                 "prazoPedido": {"value": 0, "type": "Integer"},
-                "nomeCliente": {"value": "Maria", "type": "String"},
+                "nomeCliente": {"value": "Penna", "type": "String"},
                 "indicacao": {"value": true, "type": "Boolean"},
                 "comprou": {"value": true, "type": "Boolean"},
                 "pagou": {"value": true, "type": "Boolean"}
