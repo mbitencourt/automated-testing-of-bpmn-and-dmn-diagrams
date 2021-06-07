@@ -54,7 +54,7 @@ Feature: Registrar Pedido
             "variables": {
                 "quantidadePedida": {"value": 1001, "type": "Integer"},
                 "prazoPedido": {"value": 0, "type": "Integer"},
-                "nomeCliente": {"value": "Maria", "type": "String"},
+                "nomeCliente": {"value": "Frias", "type": "String"},
                 "indicacao": {"value": true, "type": "Boolean"},
                 "comprou": {"value": true, "type": "Boolean"},
                 "pagou": {"value": true, "type": "Boolean"}
@@ -76,7 +76,7 @@ Feature: Registrar Pedido
             "variables": {
                 "quantidadePedida": {"value": 100, "type": "Integer"},
                 "prazoPedido": {"value": 1, "type": "Integer"},
-                "nomeCliente": {"value": "Maria", "type": "String"},
+                "nomeCliente": {"value": "Ruiz", "type": "String"},
                 "indicacao": {"value": false, "type": "Boolean"},
                 "comprou": {"value": true, "type": "Boolean"},
                 "pagou": {"value": false, "type": "Boolean"}

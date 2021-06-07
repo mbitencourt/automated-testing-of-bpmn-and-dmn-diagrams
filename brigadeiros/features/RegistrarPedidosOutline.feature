@@ -46,13 +46,13 @@ Feature: Registrar Pedidos
 
         Examples: Pedidos que não valem a pena
             | quantidadePedida | prazoPedido | nomeCliente | indicacao | comprou | pagou | pedidoValido | msgValidacaoPedido        | valorPedido   |
-            |              100 |           0 | Maria       | true      | true    | true  | false        | "Pedido não vale a pena"  | '#notpresent' |
-            |              999 |           0 | Maria       | true      | true    | true  | false        | "Pedido não vale a pena"  | '#notpresent' |
-            |               99 |           1 | Maria       | true      | true    | true  | false        | "Pedido não vale a pena"  | '#notpresent' |
-            |             1001 |           1 | Maria       | true      | true    | true  | false        | "Pedido não vale a pena"  | '#notpresent' |
+            |              100 |           0 | Frias       | true      | true    | true  | false        | "Pedido não vale a pena"  | '#notpresent' |
+            |              999 |           0 | Frias       | true      | true    | true  | false        | "Pedido não vale a pena"  | '#notpresent' |
+            |               99 |           1 | Frias       | true      | true    | true  | false        | "Pedido não vale a pena"  | '#notpresent' |
+            |             1001 |           1 | Frias       | true      | true    | true  | false        | "Pedido não vale a pena"  | '#notpresent' |
 
         Examples: Pedidos de cliente ruim
             | quantidadePedida | prazoPedido | nomeCliente | indicacao | comprou | pagou | pedidoValido | msgValidacaoPedido        | valorPedido   |
-            |              100 |           1 | Maria       | true      | true    | false | false        | "Pedido de cliente ruim"  | '#notpresent' |
-            |              100 |           1 | Maria       | false     | true    | false | false        | "Pedido de cliente ruim"  | '#notpresent' |
-            |              100 |           1 | Maria       | false     | false   | false | false        | "Pedido de cliente ruim"  | '#notpresent' |
+            |              100 |           1 | Ruiz        | true      | true    | false | false        | "Pedido de cliente ruim"  | '#notpresent' |
+            |              100 |           1 | Ruiz        | false     | true    | false | false        | "Pedido de cliente ruim"  | '#notpresent' |
+            |              100 |           1 | Ruiz        | false     | false   | false | false        | "Pedido de cliente ruim"  | '#notpresent' |
