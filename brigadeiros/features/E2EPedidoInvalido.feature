@@ -30,7 +30,8 @@ Feature: Registrar Pedido Inválido E2E
         * print 'idInstance: ' + idInstance
         * print 'numeroPedido: ' + numeroPedido
 
-        Given path "/task?processVariables=numeroPedido_eq_" + numeroPedido
+        Given param processVariables = "numeroPedido_eq_" + numeroPedido
+        Given path "/task"
         When method GET
         Then status 200
         And match $[0].id == '#present'
