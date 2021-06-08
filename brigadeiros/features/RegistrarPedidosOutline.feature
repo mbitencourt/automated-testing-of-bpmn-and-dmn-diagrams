@@ -30,24 +30,24 @@ Feature: Registrar Pedidos
             | quantidadePedida | prazoPedido | nomeCliente | indicacao | comprou | pagou | pedidoValido | msgValidacaoPedido        | valorPedido   |
             |               99 |           0 | Creusa      | false     | false   | false | true         | "Pedido de cliente vip"   |        128.70 |
             |              100 |           0 | Creusa      | false     | false   | false | true         | "Pedido de cliente vip"   |        130.00 |
-            |              999 |           0 | Creusa      | false     | false   | false | true         | "Pedido de cliente vip"   |       1298.70 |
+            |             1000 |           0 | Creusa      | false     | false   | false | true         | "Pedido de cliente vip"   |       1300.00 |
             |             1001 |           0 | Creusa      | false     | false   | false | true         | "Pedido de cliente vip"   |       1301.30 |
             |               99 |           1 | Creusa      | false     | false   | false | true         | "Pedido de cliente vip"   |        128.70 |
             |              100 |           1 | Creusa      | false     | false   | false | true         | "Pedido de cliente vip"   |        130.00 |
-            |              999 |           1 | Creusa      | false     | false   | false | true         | "Pedido de cliente vip"   |       1298.70 |
+            |             1000 |           1 | Creusa      | false     | false   | false | true         | "Pedido de cliente vip"   |       1300.00 |
             |             1001 |           1 | Creusa      | false     | false   | false | true         | "Pedido de cliente vip"   |       1301.30 |
 
         Examples: Pedidos de cliente comum
             | quantidadePedida | prazoPedido | nomeCliente | indicacao | comprou | pagou | pedidoValido | msgValidacaoPedido        | valorPedido   |
             |              100 |           1 | Maria       | true      | false   | false | true         | "Pedido de cliente comum" |        160.00 |
-            |              999 |           1 | Maria       | true      | false   | false | true         | "Pedido de cliente comum" |       1598.40 |
+            |             1000 |           1 | Maria       | true      | false   | false | true         | "Pedido de cliente comum" |       1600.00 |
             |              100 |           1 | Maria       | false     | true    | true  | true         | "Pedido de cliente comum" |        160.00 |
-            |              999 |           1 | Maria       | false     | true    | true  | true         | "Pedido de cliente comum" |       1598.40 |
+            |             1000 |           1 | Maria       | false     | true    | true  | true         | "Pedido de cliente comum" |       1600.00 |
 
         Examples: Pedidos que não valem a pena
             | quantidadePedida | prazoPedido | nomeCliente | indicacao | comprou | pagou | pedidoValido | msgValidacaoPedido        | valorPedido   |
             |              100 |           0 | Penna       | true      | true    | true  | false        | "Pedido não vale a pena"  | '#notpresent' |
-            |              999 |           0 | Penna       | true      | true    | true  | false        | "Pedido não vale a pena"  | '#notpresent' |
+            |             1000 |           0 | Penna       | true      | true    | true  | false        | "Pedido não vale a pena"  | '#notpresent' |
             |               99 |           1 | Penna       | true      | true    | true  | false        | "Pedido não vale a pena"  | '#notpresent' |
             |             1001 |           1 | Penna       | true      | true    | true  | false        | "Pedido não vale a pena"  | '#notpresent' |
 
