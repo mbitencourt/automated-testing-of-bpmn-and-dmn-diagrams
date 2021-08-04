@@ -8,3 +8,7 @@ Automating testing of processes and business rules in Camunda Run Community Edit
 The presentation in Brazilian Portugese of the event is available at https://youtu.be/2XkFqSbHqHA?t=972 and the PDF at https://mauriciobitencourt.com/wp-content/uploads/2021/06/remote-camunda-meetup-3-8-jun-2021-carlos-renato-dos-santos-ramos.pdf 
 
 More information at https://mauriciobitencourt.com/eventos/camunda-user-group-brazil-remote-meetup-3-8-jun-2021/
+
+The Brigadeiros da Nice case study in Brazilian Portuguese is available at https://www.youtube.com/watch?v=Y6sb1Eos1sI
+
+The  Maria's chocolate candies - Business Processes vs. Business Rules case study in English is available at https://www.youtube.com/watch?v=v6SgSzfHT2Q
