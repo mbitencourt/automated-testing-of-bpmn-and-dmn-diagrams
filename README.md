@@ -13,7 +13,7 @@ The Brigadeiros da Nice case study in Brazilian Portuguese is available at https
 
 The  Maria's chocolate candies - Business Processes vs. Business Rules case study in English is available at https://www.youtube.com/watch?v=v6SgSzfHT2Q
 
-References:
+References (English version coming soon):
 
 (Biz) Process Design and Decision Rules with Executable Models https://www.roadmap.com.br/pd
 
