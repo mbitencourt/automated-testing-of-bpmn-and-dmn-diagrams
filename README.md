@@ -12,3 +12,8 @@ More information at https://mauriciobitencourt.com/eventos/camunda-user-group-br
 The Brigadeiros da Nice case study in Brazilian Portuguese is available at https://www.youtube.com/watch?v=Y6sb1Eos1sI
 
 The  Maria's chocolate candies - Business Processes vs. Business Rules case study in English is available at https://www.youtube.com/watch?v=v6SgSzfHT2Q
+
+References:
+(Biz) Process Design and Decision Rules with Executable Models https://www.roadmap.com.br/pd
+(Dev) Development with BPM Standards in Process Engines and Decision Rules https://www.roadmap.com.br/pa
+(Ops) Operations and Monitoring of Automated Process Execution https://www.roadmap.com.br/om
